@@ -13,6 +13,13 @@ namespace Logger.Core.ProposedSolution
         private readonly IDataAccess _dataAccess;
         private readonly IFileAccess _fileAccess;
 
+        /// <summary>
+        /// Constructor, sets the parameters
+        /// </summary>
+        /// <param name="loggerConfiguration">Logger Configuration Factory</param>
+        /// <param name="consoleAccess">Console Factory</param>
+        /// <param name="dataAccess">DB Data Factory</param>
+        /// <param name="fileAccess">File Factory</param>
         public JobLogger(ILoggerConfiguration loggerConfiguration, IConsoleAccess consoleAccess, IDataAccess dataAccess, IFileAccess fileAccess)
         {
             this._dataAccess = dataAccess;
@@ -23,9 +30,10 @@ namespace Logger.Core.ProposedSolution
         }
 
         /// <summary>
-        /// 
+        /// Checks the parameters and settings to see if they are well configured
+        /// if not it throws an exception with a related message
         /// </summary>
-        /// <param name="logData"></param>
+        /// <param name="logData">Log Entity Object</param>
         private void CheckSettings(Log logData)
         {
             if (!logData.IsValidMessage())

@@ -30,31 +30,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExpectedObjects">
+    <Reference Include="ExpectedObjects, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ExpectedObjects.1.1.1\lib\net40\ExpectedObjects.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Moq">
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Should">
+    <Reference Include="Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Should.1.1.20\lib\Should.dll</HintPath>
     </Reference>
-    <Reference Include="SpecsFor">
+    <Reference Include="SpecsFor, Version=4.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SpecsFor.4.3.2\lib\net40\SpecsFor.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap">
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap.AutoMocking.Moq">
+    <Reference Include="StructureMap.AutoMocking.Moq, Version=3.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\structuremap.automocking.moq.3.1.5.154\lib\net40\StructureMap.AutoMocking.Moq.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap.Net4">
+    <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -66,12 +71,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="File\FileTests.cs" />
+    <Compile Include="ModelTests\GivenLogModelMessageIsEmpty_WhenCallingValidate_ReturnsFalse.cs" />
+    <Compile Include="ModelTests\GivenLogModelMessageNotEmpty_WhenCallingValidate_ReturnsTrue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JorgeAgueroBelatrixCodeExam\Logger.Core.csproj">
+      <Project>{df8f5533-e2b7-45ca-a03d-08c9fa82bb29}</Project>
+      <Name>Logger.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.DAL\Logger.ToBD.csproj">
+      <Project>{64d6e901-1c50-43c3-8f91-ab008c396fcf}</Project>
+      <Name>Logger.ToBD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.FileSaver\Logger.ToFile.csproj">
+      <Project>{98e702a3-4e7b-4470-9a0f-e77942fef39e}</Project>
+      <Name>Logger.ToFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.Interfaces\Logger.Interfaces.csproj">
+      <Project>{eed826e0-3f03-4c79-9fc5-f55ae5c593cb}</Project>
+      <Name>Logger.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.Model\Logger.Model.csproj">
+      <Project>{0078d746-b192-472d-b5bc-f65cf98a65c1}</Project>
+      <Name>Logger.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.ToConsole\Logger.ToConsole.csproj">
+      <Project>{f132f24a-9dd7-4e2a-a485-9bde86f3af8d}</Project>
+      <Name>Logger.ToConsole</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

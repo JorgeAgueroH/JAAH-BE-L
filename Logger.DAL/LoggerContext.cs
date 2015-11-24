@@ -1,5 +1,7 @@
 ﻿
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+
 namespace Logger.DAL
 {
     public class LoggerContext : DbContext
@@ -10,5 +12,10 @@ namespace Logger.DAL
         }
 
         public DbSet<Model.Log> LogSet { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
 }
