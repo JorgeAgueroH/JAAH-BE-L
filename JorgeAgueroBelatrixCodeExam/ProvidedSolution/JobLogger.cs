@@ -2,8 +2,11 @@
 using System.Linq;
 using System.Text;
 
-namespace JorgeAgueroBelatrixCodeExam.ProvidedSolution
+namespace Logger.Core.ProvidedSolution
 {
+    /// <summary>
+    /// Job Logger class provided in the PDF, slighty modified to remove the compile errors
+    /// </summary>
     public class JobLogger
     {
         private static bool _logToFile;
@@ -41,7 +44,7 @@ namespace JorgeAgueroBelatrixCodeExam.ProvidedSolution
 
             System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(System.Configuration.ConfigurationManager.AppSettings["ConnectionString"]);
             connection.Open();
-            int t;
+            int t = 0;
             if (logMessage && _logMessage)
             {
                 t = 1;
@@ -57,7 +60,7 @@ namespace JorgeAgueroBelatrixCodeExam.ProvidedSolution
             System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand("Insert into Log Values('" + message + "'," + t.ToString() + ")");
             command.ExecuteNonQuery();
 
-            string l;
+            string l = string.Empty;
             if (!System.IO.File.Exists(System.Configuration.ConfigurationManager.AppSettings["LogFileDirectory"] + "LogFile" + DateTime.Now.ToShortDateString() + ".txt"))
             {
                 l = System.IO.File.ReadAllText(System.Configuration.ConfigurationManager.AppSettings["LogFileDirectory"] + "LogFile" + DateTime.Now.ToShortDateString() + ".txt");

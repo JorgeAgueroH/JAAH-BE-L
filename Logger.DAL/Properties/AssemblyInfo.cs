@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LoggerCore")]
-[assembly: AssemblyDescription("Core functionality of the JobLogger")]
+[assembly: AssemblyTitle("Logger.DAL")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Belatrix")]
-[assembly: AssemblyProduct("JorgeAgueroBelatrixCodeExam")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Logger.DAL")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4eaec9fc-c32e-46d9-a8fd-6347f0960fa9")]
+[assembly: Guid("1e526596-5358-444b-8711-2744ac5f4b23")]
 
 // Version information for an assembly consists of the following four values:
 //

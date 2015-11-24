@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger.Core.ProposedSolution
+namespace Logger.FileSaver
 {
-    class JobLogger
+    public class Class1
     {
     }
 }

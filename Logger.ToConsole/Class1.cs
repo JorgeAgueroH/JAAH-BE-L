@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger.Core.ProposedSolution
+namespace Logger.ToConsole
 {
-    class JobLogger
+    public class Class1
     {
     }
 }
