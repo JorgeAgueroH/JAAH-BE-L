@@ -7,8 +7,8 @@
     <ProjectGuid>{DF8F5533-E2B7-45CA-A03D-08C9FA82BB29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JorgeAgueroBelatrixCodeExam</RootNamespace>
-    <AssemblyName>JorgeAgueroBelatrixCodeExam</AssemblyName>
+    <RootNamespace>Logger.Core</RootNamespace>
+    <AssemblyName>Logger.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,11 +41,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProposedSolution\JobLogger.cs" />
+    <Compile Include="ProposedSolution\JobLoggerConfiguration.cs" />
     <Compile Include="ProvidedSolution\JobLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logger.DAL\Logger.ToBD.csproj">
+      <Project>{64d6e901-1c50-43c3-8f91-ab008c396fcf}</Project>
+      <Name>Logger.ToBD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.FileSaver\Logger.ToFile.csproj">
+      <Project>{98e702a3-4e7b-4470-9a0f-e77942fef39e}</Project>
+      <Name>Logger.ToFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.Interfaces\Logger.Interfaces.csproj">
+      <Project>{eed826e0-3f03-4c79-9fc5-f55ae5c593cb}</Project>
+      <Name>Logger.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.Model\Logger.Model.csproj">
+      <Project>{0078d746-b192-472d-b5bc-f65cf98a65c1}</Project>
+      <Name>Logger.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger.ToConsole\Logger.ToConsole.csproj">
+      <Project>{f132f24a-9dd7-4e2a-a485-9bde86f3af8d}</Project>
+      <Name>Logger.ToConsole</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
